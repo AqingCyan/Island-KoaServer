@@ -1,0 +1,15 @@
+{
+  "name": "huaqing_koa",
+  "version": "1.0.0",
+  "description": "基于Koa二次开发的小程序后台",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "AqingCyan",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.7.0"
+  }
+}
