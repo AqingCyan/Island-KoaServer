@@ -10,5 +10,3 @@
 - PostMan
 - DataGrid
 - nodemon、pm2
-
-> 小程序实战笔记近日上线
