@@ -1,3 +1,7 @@
+/**
+ * 初始化服务器方法
+ */
+
 const requireDirectory = require('require-directory')
 const Router = require('koa-router')
 
