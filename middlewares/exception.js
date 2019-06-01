@@ -10,7 +10,7 @@ const catchError = async (ctx, next) => {
   try {
     await next()
   } catch (error) {
-    // 程序中捕获到Error不应该返回到客户端，应该简化成清晰明了的信息
+    // if 判断异常是否是在HttpException中定义好异常信息的已知异常
     if (error instanceof HttpException) {
       ctx.body = {
         msg: error.msg,
@@ -18,6 +18,14 @@ const catchError = async (ctx, next) => {
         request: `${ctx.method} ${ctx.path}`
       }
       ctx.status = error.code
+    } else {
+      // 若为异常（通常是原生Error）
+      ctx.body = {
+        msg: 'we made a mistake',
+        error_code: 999,
+        request: `${ctx.method} ${ctx.path}`
+      }
+      ctx.status = 500
     }
   }
 }
