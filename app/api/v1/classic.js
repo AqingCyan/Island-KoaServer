@@ -4,23 +4,20 @@
 
 const Router = require('koa-router')
 const router = new Router()
-const { HttpException } = require('../../../core/http-exception')
+const { PositiveIntegerValidator } = require('../../validators/validator')
 
 // 若想在url中间传参，就可以使用:id的形式
-router.get('/v1/:id/classic/latest', (ctx, next) => {
+router.post('/v1/:id/classic/latest', (ctx, next) => {
   const path = ctx.params
   const query = ctx.request.query
   const header = ctx.request.header
   const body = ctx.request.body
 
-  if (true) {
-    const error = new HttpException('为什么错误', 10001, 400)
-    throw error
-  }
-
-  ctx.body = {
-    key: 'classic'
-  }
+  // 使用定义的参数校验器校验参数
+  const v = new PositiveIntegerValidator().validate(ctx)
+  // 获取http参数，parsed为false不进行类型的转换
+  const id = v.get('path.id', parsed = false)
+  ctx.body = `success, param's id is ${id}`
 })
 
 module.exports = router
