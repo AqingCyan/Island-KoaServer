@@ -10,6 +10,10 @@ const catchError = async (ctx, next) => {
   try {
     await next()
   } catch (error) {
+    // 判断开发环境，在开发环境，服务器错误使命令行进程进行错误抛出
+    if (global.config.enviroment === 'dev') {
+      throw error
+    }
     // if 判断异常是否是在HttpException中定义好异常信息的已知异常
     if (error instanceof HttpException) {
       ctx.body = {

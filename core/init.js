@@ -14,6 +14,7 @@ class InitManger {
     InitManger.app = app
     InitManger.initLoaderRouters()
     InitManger.loadHttpException()
+    InitManger.loadConfig()
   }
 
   /**
@@ -39,6 +40,16 @@ class InitManger {
   static loadHttpException() {
     const errors = require('./http-exception')
     global.errs = errors
+  }
+
+  /**
+   * 加载配置
+   * @param {string} path 
+   */
+  static loadConfig(path = '') {
+    const configPath = path || process.cwd() + '/config/config.js'
+    const config = require(configPath)
+    global.config = config
   }
 }
 
