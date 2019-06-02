@@ -3,6 +3,7 @@
  */
 
 const { LinValidator, Rule } = require('../../core/lin-validator')
+const { User } = require('../model/user')
 
 /**
  * 路径参数校验器
@@ -37,13 +38,29 @@ class RegisterValidator extends LinValidator {
   }
   /**
    * 验证两密码是否相等
-   * @param{object} vals 所有注册信息
+   * @param {object} vals 所有注册信息
    */
   validatePassword(vals) {
     const psw1 = vals.body.password
     const psw2 = vals.body.password2
     if (psw1 !== psw2) {
       throw Error('两个密码必须相同')
+    }
+  }
+
+  /**
+   * 验证邮箱是否重复
+   * @param {object} vals 所有注册信息
+   */
+  async validateEmail(vals) {
+    const email = vals.body.email
+    const user = await User.findOne({
+      where: {
+        email: email
+      }
+    })
+    if (user) {
+      throw new Error('e-mail已存在')
     }
   }
 }
