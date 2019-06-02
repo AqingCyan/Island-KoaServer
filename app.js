@@ -7,9 +7,6 @@ const parser = require('koa-bodyparser')
 const InitManger = require('./core/init')
 const catchError = require('./middlewares/exception')
 
-// 初始化数据库user表
-require('./app/model/user')
-
 const PORT = 3000
 const app = new Koa()
 
