@@ -17,8 +17,11 @@ User.init({
     primaryKey: true,
     autoIncrement: true
   },
-  nikename: Sequelize.STRING,
-  email: Sequelize.STRING,
+  nickname: Sequelize.STRING,
+  email: {
+    type: Sequelize.STRING(128),
+    unique: true
+  },
   password: Sequelize.STRING,
   openid: {
     type: Sequelize.STRING(64),
@@ -28,3 +31,7 @@ User.init({
     sequelize,
     tableName: 'user'
   })
+
+module.exports = {
+  User
+}
