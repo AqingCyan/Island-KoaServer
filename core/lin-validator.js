@@ -1,13 +1,22 @@
 /**
- * Lin-Validator v1
+ * Lin-Validator v2
  * 作者：7七月
  * 微信公众号：林间有风
  */
 
 const validator = require('validator')
-const { ParameterException } = require('./http-exception')
-const { get, last, set, cloneDeep } = require("lodash")
-const { findMembers } = require('./util')
+const {
+  ParameterException
+} = require('./http-exception')
+const {
+  get,
+  last,
+  set,
+  cloneDeep
+} = require("lodash")
+const {
+  findMembers
+} = require('./util')
 
 
 class LinValidator {
@@ -56,7 +65,7 @@ class LinValidator {
     return false
   }
 
-  validate(ctx, alias = {}) {
+  async validate(ctx, alias = {}) {
     this.alias = alias
     let params = this._assembleAllParams(ctx)
     this.data = cloneDeep(params)
@@ -69,7 +78,7 @@ class LinValidator {
     const errorMsgs = []
     // const map = new Map(memberKeys)
     for (let key of memberKeys) {
-      const result = this._check(key, alias)
+      const result = await this._check(key, alias)
       if (!result.success) {
         errorMsgs.push(result.msg)
       }
@@ -81,12 +90,12 @@ class LinValidator {
     return this
   }
 
-  _check(key, alias = {}) {
+  async _check(key, alias = {}) {
     const isCustomFunc = typeof (this[key]) == 'function' ? true : false
     let result;
     if (isCustomFunc) {
       try {
-        this[key](this.data)
+        await this[key](this.data)
         result = new RuleResult(true)
       } catch (error) {
         result = new RuleResult(false, error.msg || error.message || '参数错误')
@@ -187,7 +196,7 @@ class Rule {
   }
 
   validate(field) {
-    if (this.name == 'optional')
+    if (this.name == 'isOptional')
       return new RuleResult(true)
     if (!validator[this.name](field + '', ...this.params)) {
       return new RuleResult(false, this.msg || this.message || '参数错误')
@@ -243,7 +252,7 @@ class RuleField {
 
   _allowEmpty() {
     for (let rule of this.rules) {
-      if (rule.name == 'optional') {
+      if (rule.name == 'isOptional') {
         return true
       }
     }
@@ -253,7 +262,7 @@ class RuleField {
   _hasDefault() {
     for (let rule of this.rules) {
       const defaultValue = rule.params[0]
-      if (rule.name == 'optional') {
+      if (rule.name == 'isOptional') {
         return defaultValue
       }
     }
