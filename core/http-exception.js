@@ -1,5 +1,5 @@
 /**
- * 异常响应体类
+ * 响应体类的定义
  */
 
 /**
@@ -26,4 +26,16 @@ class ParameterException extends HttpException {
   }
 }
 
-module.exports = { HttpException, ParameterException }
+/**
+ * 响应成功类
+ */
+class Success extends HttpException {
+  constructor(msg, errorCode) {
+    super()
+    this.code = 201
+    this.msg = msg || 'ok'
+    this.errorCode = errorCode || 0
+  }
+}
+
+module.exports = { HttpException, ParameterException, Success }
