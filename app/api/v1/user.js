@@ -6,6 +6,7 @@ const Router = require('koa-router')
 const bcrpty = require('bcryptjs')
 const { RegisterValidator } = require('../../validators/validator')
 const { User } = require('../../model/user')
+const { success } = require('../../lib/helper')
 const router = new Router({
   prefix: '/v1/user'
 })
@@ -22,8 +23,7 @@ router.post('/register', async (ctx) => {
     nickname: v.get('body.nickname')
   }
   const r = await User.create(user)
-  // 以抛出异常的形式来响应成功
-  throw new global.errs.Success()
+  success()
 })
 
 module.exports = router
