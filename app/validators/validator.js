@@ -65,6 +65,22 @@ class RegisterValidator extends LinValidator {
   }
 }
 
+/**
+ * token校验器
+ */
+class TokenValidator extends LinValidator {
+  constructor() {
+    super()
+    this.account = [
+      new Rule('isLength', '不符合账号规则', { min: 4, max: 32 })
+    ]
+    this.secret = [
+      new Rule('isOption'), // 可以不传，但传入要符合规范
+      new Rule('isLength', '至少6个字符', { min: 6, max: 128 })
+    ]
+  }
+}
+
 module.exports = {
   PositiveIntegerValidator,
   RegisterValidator
