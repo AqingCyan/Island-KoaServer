@@ -38,4 +38,24 @@ class Success extends HttpException {
   }
 }
 
-module.exports = { HttpException, ParameterException, Success }
+/**
+ * 未查询到资源异常响应类
+ */
+class NotFound extends HttpException {
+  constructor(msg, error_code) {
+    super()
+    this.message = msg || '资源未找到'
+    this.error_code = error_code || 10000
+    this.code = 404
+  }
+}
+
+class AuthFalied extends HttpException {
+  constructor(msg, error_code) {
+    this.msg = msg || '授权失败'
+    this.error_code = error_code
+    this.code = 401
+  }
+}
+
+module.exports = { HttpException, ParameterException, Success, NotFound, AuthFalied }

@@ -5,7 +5,30 @@ const bcrpty = require('bcryptjs')
 const { sequelize } = require('../../core/db')
 const { Sequelize, Model } = require('sequelize')
 
-class User extends Model { }
+class User extends Model {
+  /**
+   * 数据库查询用户登录信息
+   * @param {string} email 登录邮箱
+   * @param {string} plainPassword 登录密码
+   */
+  static async verifyEmailPassword(email, plainPassword) {
+    // 通过用户邮箱查询到是否存在该用户
+    const user = await User.findOne({
+      where: {
+        email
+      }
+    })
+    if (!user) {
+      throw new global.errs.NotFound('账号不存在')
+    }
+    // 能通过邮箱查询到该用户，进行密码验证
+    const correct = bcrpty.compareSync(plainPassword, user.password)
+    if (!correct) {
+      throw new global.errs.AuthFailed('密码不正确')
+    }
+    return user
+  }
+}
 
 /**
  * 设置user表模型
