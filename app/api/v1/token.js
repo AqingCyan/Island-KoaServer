@@ -20,7 +20,7 @@ router.post('/', async ctx => {
     case LoginType.USER_MINI_PROGRAM:
       break
     default:
-      break
+      throw new global.errs.ParameterException('没有相应的处理函数')
   }
 })
 

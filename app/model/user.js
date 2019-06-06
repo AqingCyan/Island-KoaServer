@@ -19,12 +19,12 @@ class User extends Model {
       }
     })
     if (!user) {
-      throw new global.errs.NotFound('账号不存在')
+      throw new global.errs.AuthFalied('账号不存在')
     }
     // 能通过邮箱查询到该用户，进行密码验证
     const correct = bcrpty.compareSync(plainPassword, user.password)
     if (!correct) {
-      throw new global.errs.AuthFailed('密码不正确')
+      throw new global.errs.AuthFalied('密码不正确')
     }
     return user
   }
