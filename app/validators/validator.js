@@ -32,7 +32,7 @@ class RegisterValidator extends LinValidator {
       new Rule('isLength', '密码最少6位，最长32位', { min: 6, max: 32 }),
       new Rule('matches', '密码不符合规范', '^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]')
     ]
-    this.password2 = this.password1
+    this.password2 = this.password
     this.nickname = [
       new Rule('isLength', '昵称不符合长度规范', { min: 4, max: 32 })
     ]
