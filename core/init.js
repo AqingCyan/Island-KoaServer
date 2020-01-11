@@ -7,6 +7,14 @@ class InitManager {
     InitManager.app = app
     InitManager.initLoadRouters()
     InitManager.loadHttpException()
+    InitManager.loadConfig()
+  }
+
+  // 装载项目环境配置
+  static loadConfig(path = '') {
+    const configPath = path || process.cwd() + '/config/config.js'
+    const config = require(configPath)
+    global.config = config
   }
 
   // 自动注册路由

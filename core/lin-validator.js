@@ -25,7 +25,6 @@ class LinValidator {
     this.parsed = {}
   }
 
-
   _assembleAllParams(ctx) {
     return {
       body: ctx.request.body,
@@ -268,8 +267,6 @@ class RuleField {
     }
   }
 }
-
-
 
 module.exports = {
   Rule,
