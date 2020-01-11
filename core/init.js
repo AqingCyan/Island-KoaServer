@@ -2,14 +2,15 @@ const requireDirectory = require('require-directory')
 const Router = require('koa-router')
 
 class InitManager {
+  // 入口配置中心
   static initCore(app) {
-    // 入口方法
     InitManager.app = app
     InitManager.initLoadRouters()
+    InitManager.loadHttpException()
   }
 
+  // 自动注册路由
   static initLoadRouters() {
-    // 自动注册路由
     const apiDirectory = `${process.cwd()}/app/api`
     requireDirectory(module, apiDirectory, {
       visit: (obj) => {
@@ -18,6 +19,12 @@ class InitManager {
         }
       }
     })
+  }
+
+  // 装载异常类到全局
+  static loadHttpException() {
+    const errors = require('./http-exception')
+    global.errs = errors
   }
 }
 
