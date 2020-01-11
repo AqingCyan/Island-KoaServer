@@ -5,9 +5,9 @@ class InitManager {
   // 入口配置中心
   static initCore(app) {
     InitManager.app = app
+    InitManager.loadConfig()
     InitManager.initLoadRouters()
     InitManager.loadHttpException()
-    InitManager.loadConfig()
   }
 
   // 装载项目环境配置
