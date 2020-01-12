@@ -8,15 +8,18 @@ User.init(
 		id: {
 			type: Sequelize.INTEGER,
 			primaryKey: true,
-			autoIncrementIdentity: true
+			autoIncrementIdentity: true,
 		},
 		nickname: Sequelize.STRING,
 		email: Sequelize.STRING,
 		password: Sequelize.STRING,
 		openid: {
 			type: Sequelize.STRING(64),
-			unique: true
-		}
+			unique: true,
+		},
 	},
-	{ sequelize: db }
+	{
+		sequelize: db,
+		tableName: 'user',
+	},
 )

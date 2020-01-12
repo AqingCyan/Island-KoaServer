@@ -11,7 +11,6 @@ router.post('/v1/:id/classic/latest', (ctx, next) => {
 
   const v = new PositiveIntegerValidator().validate(ctx)
   const id = v.get('path.id', parsed = false)
-  console.log(id)
 
   ctx.body = {
     key: 'classic'

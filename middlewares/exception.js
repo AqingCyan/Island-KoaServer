@@ -5,7 +5,10 @@ const catchError = async (ctx, next) => {
   try {
     await next()
   } catch (error) {
-    if (global.config.environment === 'dev') {
+    // 不是 HttpException 的情况下且在开发环境，错误抛出
+    const isHttpException = error instanceof HttpException
+    const isDev = global.config.environment === 'dev'
+    if (isDev && !isHttpException) {
       throw error
     }
     if (error instanceof HttpException) {
