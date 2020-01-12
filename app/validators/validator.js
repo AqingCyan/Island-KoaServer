@@ -1,5 +1,6 @@
 const { LinValidator, Rule } = require('../../core/lin-validator')
 const { User } = require('../model/user')
+const { LoginType } = require('../lib/enum')
 
 class PositiveIntegerValidator extends LinValidator {
 	constructor() {
@@ -8,15 +9,13 @@ class PositiveIntegerValidator extends LinValidator {
 	}
 }
 
+// 注册验证
 class RegisterValidator extends LinValidator {
 	constructor() {
 		super()
 		this.email = [new Rule('isEmail', '不符合Email规范')]
 		this.password1 = [
-			new Rule('isLength', '密码至少6个字符，最多32个字符', {
-				min: 6,
-				max: 32,
-			}),
+			new Rule('isLength', '密码至少6个字符，最多32个字符', { min: 6, max: 32 }),
 			new Rule(
 				'matches',
 				'密码不符合规范，请包含特殊字符',
@@ -44,7 +43,38 @@ class RegisterValidator extends LinValidator {
 	}
 }
 
+// 凭证验证
+class TokenValidator extends LinValidator {
+	constructor() {
+		super()
+		this.account = [new Rule('isLength', '不符合账号规则', { min: 4, max: 32 })]
+		this.secret = [
+			new Rule('isOptional'),
+			new Rule('isLength', '至少六个字符', { min: 6, max: 128 }),
+		]
+	}
+
+	// 如果使用邮箱登录，必传密码
+	validateEmailPassword(vals) {
+		const isEmail = vals.body.type === LoginType.USER_EMAIL
+		if (isEmail && !vals.body.secret) {
+			throw new Error('密码不能为空')
+		}
+	}
+
+	// 校验登录类型
+	validateLoginType(vals) {
+		if (!vals.body.type) {
+			throw new Error('type是必传参数')
+		}
+		if (!LoginType.isThisType(vals.body.type)) {
+			throw new Error('type参数不合法')
+		}
+	}
+}
+
 module.exports = {
 	PositiveIntegerValidator,
 	RegisterValidator,
+	TokenValidator,
 }
