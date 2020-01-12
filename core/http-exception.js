@@ -37,6 +37,16 @@ class NotFound extends HttpException {
 	}
 }
 
+// 禁止访问
+class Forbidden extends HttpException {
+	constructor(msg, errorCode) {
+		super()
+		this.msg = msg || '禁止访问'
+		this.errorCode = errorCode || 10006
+		this.code = 403
+	}
+}
+
 // 验证未通过异常
 class AuthFailed extends HttpException {
 	constructor(msg, errorCode) {
@@ -53,4 +63,5 @@ module.exports = {
 	Success,
 	NotFound,
 	AuthFailed,
+	Forbidden,
 }

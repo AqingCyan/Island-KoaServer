@@ -5,6 +5,10 @@ module.exports = {
 		host: 'localhost',
 		prot: 3306,
 		user: 'root',
-		password: 'xkq199862'
-	}
+		password: 'xkq199862',
+	},
+	security: {
+		secretKey: 'abcdefg',
+		expiresIn: 3600 * 24 * 30,
+	},
 }
