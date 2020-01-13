@@ -11,4 +11,9 @@ module.exports = {
 		secretKey: 'abcdefg',
 		expiresIn: 3600 * 24 * 30,
 	},
+	wx: {
+		appId: '',
+		appSecret: '',
+		loginUrl: '',
+	},
 }

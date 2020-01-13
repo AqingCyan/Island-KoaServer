@@ -2,7 +2,13 @@ const basicAuth = require('basic-auth')
 const jwt = require('jsonwebtoken')
 
 class Auth {
-	constructor() {}
+	constructor(level) {
+		// 权限控制
+		this.level = level || 1
+		Auth.USER = 8
+		Auth.ADMIN = 16
+		Auth.SUPER_ADMIN = 32
+	}
 	get m() {
 		return async (ctx, next) => {
 			// token进行检测
@@ -19,7 +25,13 @@ class Auth {
 					errMsg = 'token令牌过期'
 				}
 				throw new global.errs.Forbidden(errMsg)
-      }
+			}
+
+			if (decode.scope < this.level) {
+				errMsg = '权限不足'
+				throw new global.errs.Forbidden(errMsg)
+			}
+
 			ctx.auth = {
 				uid: decode.uid,
 				scope: decode.scope,
