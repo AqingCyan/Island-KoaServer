@@ -36,8 +36,16 @@ class Auth {
 				uid: decode.uid,
 				scope: decode.scope,
 			}
-
 			await next()
+		}
+	}
+
+	static verifyToken(token) {
+		try {
+			jwt.verify(token, global.config.security.secretKey)
+			return true
+		} catch (error) {
+			return false
 		}
 	}
 }
