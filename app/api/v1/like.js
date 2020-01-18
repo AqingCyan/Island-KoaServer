@@ -1,8 +1,8 @@
 const Router = require('koa-router')
-const { Auth } = require('../../../middlewares/auth')
-const { LikeValidator } = require('../../validators/validator')
-const { Favor } = require('../../model/favor')
-const { success } = require('../../lib/helper')
+const { Auth } = require('@root/middlewares/auth')
+const { LikeValidator } = require('@validators/validator')
+const { Favor } = require('@model/favor')
+const { success } = require('@root/app/lib/helper')
 
 const router = new Router({
   prefix: '/v1/like',

@@ -7,9 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["koa", "isLand"],
+  "author": "AqingCyan",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
     "basic-auth": "^2.0.1",
@@ -26,5 +26,10 @@
     "require-directory": "^2.1.1",
     "sequelize": "^5.21.3",
     "validator": "^10.11.0"
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@model": "app/model",
+    "@validators": "app/validators"
   }
 }

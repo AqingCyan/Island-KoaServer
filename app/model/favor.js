@@ -1,6 +1,6 @@
-const { db } = require('../../core/db')
 const { Sequelize, Model } = require('sequelize')
-const { Art } = require('../model/art')
+const { db } = require('@root/core/db')
+const { Art } = require('@model/art')
 
 // 点赞业务表
 class Favor extends Model {

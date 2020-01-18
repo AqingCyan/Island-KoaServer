@@ -1,8 +1,8 @@
 const util = require('util')
 const Axios = require('axios')
-const { User } = require('../model/user')
-const { generateToken } = require('../../core/util')
-const { Auth } = require('../../middlewares/auth')
+const { User } = require('@model/user')
+const { generateToken } = require('@root/core/util')
+const { Auth } = require('@root/middlewares/auth')
 
 class WXManger {
 	static async codeToToken(code) {

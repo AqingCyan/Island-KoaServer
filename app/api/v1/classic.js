@@ -1,8 +1,8 @@
 const Router = require('koa-router')
-const { Flow } = require('../../model/flow')
-const { Art } = require('../../model/art')
-const { Auth } = require('../../../middlewares/auth')
-const { Favor } = require('../../model/favor')
+const { Flow } = require('@model/flow')
+const { Art } = require('@model/art')
+const { Auth } = require('@root/middlewares/auth')
+const { Favor } = require('@model/favor')
 
 const router = new Router({
   prefix: '/v1/classic',

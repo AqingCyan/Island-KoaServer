@@ -1,4 +1,4 @@
-const { db } = require('../../core/db')
+const { db } = require('@root/core/db')
 const { Sequelize, Model } = require('sequelize')
 
 class Flow extends Model {}
