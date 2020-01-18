@@ -1,2 +1,3 @@
 <l-button l-class="btn" size="long" bind:lintap="onGetToken">获取Token</l-button>
-<l-button size="long" bind:lintap="onVerifyToken">验证Token</l-button>
+<l-button l-class="btn" size="long" bind:lintap="onVerifyToken">验证Token</l-button>
+<l-button l-class="btn" size="long" type="warning" bind:lintap="onGetLatest">获取最新期刊</l-button>

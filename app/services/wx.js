@@ -9,7 +9,6 @@ class WXManger {
 		const { loginUrl, appId, appSecret } = global.config.wx
 		const url = util.format(loginUrl, appId, appSecret, code)
 		const result = await Axios.get(url)
-		console.log(result.data)
 		if (result.status !== 200) {
 			throw new global.errs.AuthFailed('openId获取失败')
 		}

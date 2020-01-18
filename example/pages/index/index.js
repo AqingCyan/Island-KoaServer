@@ -1,3 +1,7 @@
+import {
+  Base64
+} from 'js-base64'
+
 Page({
   onGetToken() {
     wx.login({
@@ -34,5 +38,26 @@ Page({
         console.log(res.data)
       }
     })
+  },
+
+  onGetLatest() {
+    wx.request({
+      url: 'http://localhost:10086/v1/classic/latest',
+      method: 'GET',
+      // 小程序携带TOKEN
+      header: {
+        Authorization: this._encode()
+      },
+      success: res => {
+        console.log(res.data)
+      }
+    })
+  },
+
+  // Base64加密
+  _encode() {
+    const token = wx.getStorageSync('token')
+    const base64 = Base64.encode(token + ':')
+    return 'Basic ' + base64
   }
 })
