@@ -1,5 +1,6 @@
 const { Movie, Music, Sentence } = require('./classic')
 
+// 通过flow查询来查询对应类型的期刊：音乐，电影，句子
 class Art {
   static async getData(art_id, type) {
     let art = null

@@ -12,7 +12,7 @@ router.get('/latest', new Auth().m, async (ctx, next) => {
     order: [['index', 'DESC']],
   })
   const art = await Art.getData(flow.art_id, flow.type)
-  art.index = flow.index
+	art.setDataValue('index', flow.index)
   ctx.body = art
 })
 
