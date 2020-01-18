@@ -71,6 +71,23 @@ Page({
     })
   },
 
+  onDisLike() {
+    wx.request({
+      url: 'http://localhost:10086/v1/like/cancel',
+      method: 'POST',
+      data: {
+        art_id: 1,
+        type: 100,
+      },
+      header: {
+        Authorization: this._encode()
+      },
+      success: res => {
+        console.log(res.data)
+      }
+    })
+  },
+
   // Base64加密
   _encode() {
     const token = wx.getStorageSync('token')

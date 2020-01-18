@@ -2,3 +2,4 @@
 <l-button l-class="btn" size="long" bind:lintap="onVerifyToken">验证Token</l-button>
 <l-button l-class="btn" size="long" type="warning" bind:lintap="onGetLatest">获取最新期刊</l-button>
 <l-button l-class="btn" size="long" type="error" bind:lintap="onLike">点赞</l-button>
+<l-button l-class="btn" size="long" type="error" bind:lintap="onDisLike">取消点赞</l-button>
