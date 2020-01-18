@@ -30,7 +30,26 @@ class Favor extends Model {
     })
   }
 
-  static async disLike(art_id, type, uid) {}
+  static async disLike(art_id, type, uid) {
+    const favor = await Favor.findOne({
+      where: {
+        art_id,
+        type,
+        uid,
+      },
+    })
+    if (!favor) {
+      throw new global.errs.DisLikeError()
+    }
+    return db.transaction(async t => {
+      await favor.destroy({
+        force: true,
+        transaction: t,
+      })
+      const art = await Art.getData(art_id, type)
+      await art.decrement('fav_nums', { by: 1, transaction: t })
+    })
+  }
 }
 
 Favor.init(
