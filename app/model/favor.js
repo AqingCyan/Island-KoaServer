@@ -25,7 +25,7 @@ class Favor extends Model {
         },
         { transaction: t },
       )
-      const art = await Art.getData(art_id, type)
+      const art = await Art.getData(art_id, type, false)
       await art.increment('fav_nums', { by: 1, transaction: t })
     })
   }
@@ -46,7 +46,7 @@ class Favor extends Model {
         force: true,
         transaction: t,
       })
-      const art = await Art.getData(art_id, type)
+      const art = await Art.getData(art_id, type, false)
       await art.decrement('fav_nums', { by: 1, transaction: t })
     })
   }

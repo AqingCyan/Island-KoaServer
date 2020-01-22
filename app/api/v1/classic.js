@@ -8,7 +8,7 @@ const router = new Router({
   prefix: '/v1/classic',
 })
 
-router.get('/latest', new Auth().m, async (ctx, next) => {
+router.get('/latest', new Auth().m, async ctx => {
   const flow = await Flow.findOne({
     order: [['index', 'DESC']],
   })
@@ -17,6 +17,9 @@ router.get('/latest', new Auth().m, async (ctx, next) => {
   art.setDataValue('index', flow.index)
   art.setDataValue('like_status', likeLatest)
   ctx.body = art
+})
+
+router.get('/:index/next', new Auth().m, async ctx => {
 })
 
 module.exports = router
