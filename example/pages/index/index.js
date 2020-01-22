@@ -88,6 +88,34 @@ Page({
     })
   },
 
+  onGetNext() {
+    wx.request({
+      url: 'http://localhost:10086/v1/classic/6/next',
+      method: 'GET',
+      // 小程序携带TOKEN
+      header: {
+        Authorization: this._encode()
+      },
+      success: res => {
+        console.log(res.data)
+      }
+    })
+  },
+
+  onPreNext() {
+    wx.request({
+      url: 'http://localhost:10086/v1/classic/6/previous',
+      method: 'GET',
+      // 小程序携带TOKEN
+      header: {
+        Authorization: this._encode()
+      },
+      success: res => {
+        console.log(res.data)
+      }
+    })
+  },
+
   // Base64加密
   _encode() {
     const token = wx.getStorageSync('token')
