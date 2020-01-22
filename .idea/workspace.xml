@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91e9cf7c-a93a-4178-bd14-b6ba35ed6f54" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/xuekaiqi.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/api/v1/classic.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/classic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/flow.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/flow.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/pages/index/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pages/index/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +66,7 @@
       <workItem from="1578215056449" duration="7046000" />
       <workItem from="1579703526995" duration="539000" />
       <workItem from="1579706518898" duration="385000" />
-      <workItem from="1579707145585" duration="733000" />
+      <workItem from="1579707145585" duration="2557000" />
     </task>
     <servers />
   </component>
@@ -76,9 +78,13 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="221" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1579707257720" />
-    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1579707636917">
+    <state x="502" y="380" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579707895252">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1579707636917" />
+    <state x="502" y="380" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.877@0.23.1440.877" timestamp="1579707895252" />
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1579707906368">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1579707906368" />
   </component>
 </project>

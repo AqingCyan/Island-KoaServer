@@ -102,7 +102,7 @@ Page({
     })
   },
 
-  onPreNext() {
+  onGetPre() {
     wx.request({
       url: 'http://localhost:10086/v1/classic/6/previous',
       method: 'GET',

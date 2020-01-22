@@ -4,4 +4,4 @@
 <l-button l-class="btn" size="long" type="error" bind:lintap="onLike">点赞</l-button>
 <l-button l-class="btn" size="long" type="error" bind:lintap="onDisLike">取消点赞</l-button>
 <l-button l-class="btn" size="long" type="warning" bind:lintap="onGetNext">获取下一期刊</l-button>
-<l-button l-class="btn" size="long" type="warning" bind:lintap="onPreNext">获取上一期刊</l-button>
+<l-button l-class="btn" size="long" type="warning" bind:lintap="onGetPre">获取上一期刊</l-button>
