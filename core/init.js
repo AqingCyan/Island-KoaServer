@@ -25,7 +25,7 @@ class InitManager {
         if (obj instanceof Router) {
           InitManager.app.use(obj.routes())
         }
-      }
+      },
     })
   }
 

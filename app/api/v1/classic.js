@@ -23,7 +23,6 @@ router.get('/:index/next', new Auth().m, async ctx => {
 router.get('/:index/previous', new Auth().m, async ctx => {
   const v = await new PositiveIntegerValidator().validate(ctx, { id: 'index' })
   const index = v.get('path.index')
-  console.log(index)
   ctx.body = await Flow.getPreOrNextData(ctx, 'pre', index)
 })
 

@@ -23,7 +23,6 @@ class Flow extends Model {
       throw new global.errs.NotFound()
     }
     const art = await Art.getData(flow.art_id, flow.type)
-    console.log(art, flow.index)
     const likeContent = await Favor.userLikeIt(flow.art_id, flow.type, ctx.auth.uid)
     art.setDataValue('index', flow.index)
     art.setDataValue('like_status', likeContent)

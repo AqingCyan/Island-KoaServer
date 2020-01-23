@@ -7,7 +7,7 @@ const findMembers = function (instance, {
 }) {
   // 递归函数
   function _find(instance) {
-    //基线条件（跳出递归）
+    // 基线条件（跳出递归）
     if (instance.__proto__ === null)
       return []
 
@@ -39,13 +39,13 @@ const findMembers = function (instance, {
 
 // 生成Token
 const generateToken = function (uid, scope) {
-  const secretKey = global.config.security.secretKey
-  const expiresIn = global.config.security.expiresIn
+  const { secretKey } = global.config.security
+  const { expiresIn } = global.config.security
   const token = jwt.sign({
     uid,
-    scope
+    scope,
   }, secretKey, {
-    expiresIn
+    expiresIn,
   })
   return token
 }

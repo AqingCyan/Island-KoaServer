@@ -2,14 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91e9cf7c-a93a-4178-bd14-b6ba35ed6f54" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/xuekaiqi.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/eslintPlugin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/xuekaiqi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/xuekaiqi.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/book.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/api/v1/classic.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/classic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/token.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/token.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/enum.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/enum.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/helper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/art.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/art.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/favor.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/favor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/flow.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/flow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/pages/index/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pages/index/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/wx.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/wx.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/validators/validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/validators/validator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/http-exception.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/http-exception.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/init.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/lin-validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/lin-validator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/util.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,13 +56,16 @@
     <property name="javascript.nodejs.core.library.configured.version" value="12.14.1" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="com.eslint.settings.ESLintSettingsPage" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -66,7 +85,10 @@
       <workItem from="1578215056449" duration="7046000" />
       <workItem from="1579703526995" duration="539000" />
       <workItem from="1579706518898" duration="385000" />
-      <workItem from="1579707145585" duration="2557000" />
+      <workItem from="1579707145585" duration="2683000" />
+      <workItem from="1579757037955" duration="630000" />
+      <workItem from="1579757818797" duration="146000" />
+      <workItem from="1579757978464" duration="2863000" />
     </task>
     <servers />
   </component>
@@ -74,14 +96,22 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="221" y="100" key="SettingsEditor" timestamp="1579707257720">
+    <state x="320" y="127" key="#ESLint" timestamp="1579757894711">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="221" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1579707257720" />
+    <state x="320" y="127" key="#ESLint/0.23.1440.877@0.23.1440.877" timestamp="1579757894711" />
+    <state x="443" y="99" key="SettingsEditor" timestamp="1579758442532">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="443" y="99" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1579758442532" />
     <state x="502" y="380" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579707895252">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="502" y="380" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.877@0.23.1440.877" timestamp="1579707895252" />
+    <state x="291" y="25" width="858" height="873" key="find.popup" timestamp="1579760065978">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="291" y="25" width="858" height="873" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1579760065978" />
     <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1579707906368">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

@@ -3,8 +3,8 @@ const { dbName, user, password, host, port } = require('../config/config').datab
 
 const sequelize = new Sequelize(dbName, user, password, {
   dialect: 'mysql',
-  host: host,
-  port: port,
+  host,
+  port,
   logging: true,
   timezone: '+08:00',
   define: {

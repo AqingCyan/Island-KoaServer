@@ -82,7 +82,7 @@ module.exports = {
   Success,
   NotFound,
   AuthFailed,
-	Forbidden,
-	LikeError,
-	DisLikeError,
+  Forbidden,
+  LikeError,
+  DisLikeError,
 }

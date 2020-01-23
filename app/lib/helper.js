@@ -3,5 +3,5 @@ const success = (msg, errorCode) => {
 }
 
 module.exports = {
-  success
+  success,
 }

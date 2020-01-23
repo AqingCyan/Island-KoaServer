@@ -10,6 +10,14 @@ const router = new Router({
   prefix: '/v1/token',
 })
 
+/**
+ * 邮箱登录：普通用户登录scope为8
+ */
+async function emailLogin(account, secret) {
+  const user = await User.verifyEmailPassword(account, secret)
+  return generateToken(user.id, Auth.USER)
+}
+
 router.post('/', async ctx => {
   const v = await new TokenValidator().validate(ctx)
   let token
@@ -38,13 +46,5 @@ router.post('/verify', async ctx => {
     is_valide: result,
   }
 })
-
-/**
- * 邮箱登录：普通用户登录scope为8
- */
-async function emailLogin(account, secret) {
-  const user = await User.verifyEmailPassword(account, secret)
-  return generateToken(user.id, Auth.USER)
-}
 
 module.exports = router

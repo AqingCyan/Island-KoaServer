@@ -4,11 +4,11 @@ const { Art } = require('@model/art')
 
 // 点赞业务表
 class Favor extends Model {
-  static async like(art_id, type, uid) {
+  static async like(artId, type, uid) {
     // 对两个表有操作：增加classic表fav_nums的数量，用户点赞记录（数据库事务）
     const favor = await Favor.findOne({
       where: {
-        art_id,
+        art_id: artId,
         type,
         uid,
       },
@@ -19,21 +19,21 @@ class Favor extends Model {
     return db.transaction(async t => {
       await Favor.create(
         {
-          art_id,
+          art_id: artId,
           type,
           uid,
         },
         { transaction: t },
       )
-      const art = await Art.getData(art_id, type, false)
+      const art = await Art.getData(artId, type, false)
       await art.increment('fav_nums', { by: 1, transaction: t })
     })
   }
 
-  static async disLike(art_id, type, uid) {
+  static async disLike(artId, type, uid) {
     const favor = await Favor.findOne({
       where: {
-        art_id,
+        art_id: artId,
         type,
         uid,
       },
@@ -46,21 +46,21 @@ class Favor extends Model {
         force: true,
         transaction: t,
       })
-      const art = await Art.getData(art_id, type, false)
+      const art = await Art.getData(artId, type, false)
       await art.decrement('fav_nums', { by: 1, transaction: t })
     })
   }
 
   // 用户是否点赞过该期刊
-  static async userLikeIt(art_id, type, uid) {
+  static async userLikeIt(artId, type, uid) {
     const favor = await Favor.findOne({
       where: {
         uid,
-        art_id,
+        art_id: artId,
         type,
       },
     })
-    return favor ? true : false
+    return !!favor
   }
 }
 
