@@ -1,7 +1,7 @@
 const Router = require('koa-router')
-const { Flow } = require('@model/flow')
-const { Auth } = require('@root/middlewares/auth')
-const { PositiveIntegerValidator } = require('@validators/validator')
+const { Flow } = require('../../model/flow')
+const { Auth } = require('../../../middlewares/auth')
+const { PositiveIntegerValidator } = require('../../validators/validator')
 
 const router = new Router({
   prefix: '/v1/classic',

@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 const findMembers = function (instance, {
   prefix,
   specifiedType,
-  filter
+  filter,
 }) {
   // 递归函数
   function _find(instance) {

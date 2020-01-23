@@ -23,17 +23,11 @@
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
     "lodash": "^4.17.11",
-    "module-alias": "^2.2.0",
     "mysql2": "^2.1.0",
     "npm-check": "^5.9.0",
     "require-directory": "^2.1.1",
     "sequelize": "^5.21.3",
     "validator": "^10.11.0"
-  },
-  "_moduleAliases": {
-    "@root": ".",
-    "@model": "app/model",
-    "@validators": "app/validators"
   },
   "devDependencies": {
     "eslint": "^6.8.0",

@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs')
 const { Sequelize, Model } = require('sequelize')
-const { db } = require('@root/core/db')
+const { db } = require('../../core/db')
 
 class User extends Model {
   static async verifyEmailPassword(email, plainPassword) {
