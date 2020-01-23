@@ -12,13 +12,6 @@ router.get('/latest', new Auth().m, async ctx => {
   ctx.body = await Flow.getPreOrNextData(ctx)
 })
 
-// 获取下一期刊
-router.get('/:index/next', new Auth().m, async ctx => {
-  const v = await new PositiveIntegerValidator().validate(ctx, { id: 'index' })
-  const index = v.get('path.index')
-  ctx.body = Flow.getPreOrNextData(ctx, 'next', index)
-})
-
 // 获取上一期期刊
 router.get('/:index/previous', new Auth().m, async ctx => {
   const v = await new PositiveIntegerValidator().validate(ctx, { id: 'index' })
@@ -26,5 +19,11 @@ router.get('/:index/previous', new Auth().m, async ctx => {
   ctx.body = await Flow.getPreOrNextData(ctx, 'pre', index)
 })
 
+// 获取下一期刊
+router.get('/:index/next', new Auth().m, async ctx => {
+  const v = await new PositiveIntegerValidator().validate(ctx, { id: 'index' })
+  const index = v.get('path.index')
+  ctx.body = await Flow.getPreOrNextData(ctx, 'next', index)
+})
 
 module.exports = router

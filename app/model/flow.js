@@ -6,11 +6,11 @@ const { Favor } = require('./favor')
 class Flow extends Model {
   static async getPreOrNextData(ctx, type, index) {
     let flow
-    if (type) {
-      const id = type === 'pre' ? index - 1 : index + 1
+    if (type !== undefined) {
+      const id = (type === 'next') ? index + 1 : index - 1
       const finder = {
         where: {
-          id,
+          index: id,
         },
       }
       flow = await Flow.findOne(finder)
