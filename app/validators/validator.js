@@ -1,6 +1,31 @@
 const { LinValidator, Rule } = require('../../core/lin-validator')
 const { User } = require('../model/user')
-const { LoginType } = require('../lib/enum')
+const { LoginType, ArtType } = require('../lib/enum')
+
+// 校验LoginType类型
+function checkLoginType(vals) {
+  let type = vals.body.type || vals.path.type
+  if (!type) {
+    throw new Error('type是必传参数')
+  }
+  type = parseInt(type, 10)
+  if (!LoginType.isThisType(type)) {
+    throw new Error('type参数不合法')
+  }
+}
+
+// 校验ArtType类型
+function checkArtType(vals) {
+  let type = vals.body.type || vals.path.type
+  if (!type) {
+    throw new Error('type是必须参数')
+  }
+  // 从path和params上获取的参数都是字符串，需要转换类型再校验
+  type = parseInt(type, 10)
+  if (!ArtType.isThisType(type)) {
+    throw new Error('type参数不合法')
+  }
+}
 
 class PositiveIntegerValidator extends LinValidator {
   constructor() {
@@ -66,12 +91,7 @@ class TokenValidator extends LinValidator {
 
   // 校验登录类型
   validateLoginType(vals) {
-    if (!vals.body.type) {
-      throw new Error('type是必传参数')
-    }
-    if (!LoginType.isThisType(vals.body.type)) {
-      throw new Error('type参数不合法')
-    }
+    checkLoginType(vals)
   }
 }
 
@@ -82,22 +102,16 @@ class NotEmptyValidator extends LinValidator {
   }
 }
 
-// 校验类型
-function checkType(vals) {
-  if (!vals.body.type) {
-    throw new Error('type是必传参数')
-  }
-  if (!LoginType.isThisType(vals.body.type)) {
-    throw new Error('type参数不合法')
-  }
-}
-
+// 校验是否点赞的参数
 class LikeValidator extends PositiveIntegerValidator {
   constructor() {
     super()
-    this.validateType = checkType
+    this.validateType = checkArtType
   }
 }
+
+// 校验获取用户对某一期刊是否点赞的参数
+class ClassicValidator extends LikeValidator {}
 
 module.exports = {
   PositiveIntegerValidator,
@@ -105,4 +119,5 @@ module.exports = {
   TokenValidator,
   NotEmptyValidator,
   LikeValidator,
+  ClassicValidator,
 }
