@@ -28,20 +28,26 @@ router.get('/:index/next', new Auth().m, async ctx => {
   ctx.body = await Flow.getPreOrNextData(ctx, 'next', index)
 })
 
-// 获取用户对某一期刊是否点赞
-router.get('/:type/:id/favor', new Auth().m, async ctx => {
+// 获取某一期刊详细信息
+router.get('/:type/:id', new Auth().m, async ctx => {
   const v = await new ClassicValidator().validate(ctx)
   const id = v.get('path.id')
   // 从path和params上获取的参数都是字符串，以便外面调用get获取到的是数字类型
   const type = parseInt(v.get('path.type'), 10)
-  const art = await Art.getData(id, type)
-  if (!art) {
-    throw new global.errs.NotFound()
-  }
-  const like = await Favor.userLikeIt(id, type, ctx.auth.uid)
+  const artDetail = await new Art(id, type).getDetail(ctx.auth.uid)
+  artDetail.art.setDataValue('like_status', artDetail.like_status)
+  ctx.body = artDetail.art
+})
+
+// 获取用户对某一期刊是否点赞
+router.get('/:type/:id/favor', new Auth().m, async ctx => {
+  const v = await new ClassicValidator().validate(ctx)
+  const id = v.get('path.id')
+  const type = parseInt(v.get('path.type'), 10)
+  const artDetail = await new Art(id, type).getDetail(ctx.auth.uid)
   ctx.body = {
-    fav_nums: art.fav_nums,
-    like_status: like,
+    fav_nums: artDetail.art.fav_nums,
+    like_status: artDetail.like_status,
   }
 })
 

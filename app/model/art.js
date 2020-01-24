@@ -4,6 +4,24 @@ const { Movie, Music, Sentence } = require('./classic')
 
 // 通过flow查询来查询对应类型的期刊：音乐，电影，句子
 class Art {
+  constructor(artId, type) {
+    this.artId = artId
+    this.type = type
+  }
+
+  async getDetail(uid) {
+    const { Favor } = require('./favor')
+    const art = await Art.getData(this.artId, this.type)
+    if (!art) {
+      throw new global.errs.NotFound()
+    }
+    const like = await Favor.userLikeIt(this.artId, this.type, uid)
+    return {
+      art,
+      like_status: like,
+    }
+  }
+
   static async getData(artId, type, useScope = true) {
     let art = null
     const finder = {

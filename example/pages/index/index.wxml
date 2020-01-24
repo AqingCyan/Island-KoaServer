@@ -7,3 +7,4 @@
 <l-button l-class="btn" size="long" type="warning" bind:lintap="onGetPre">获取上一期刊</l-button>
 <l-button type="warning" l-class="btn" size="long" bind:lintap="onGetClassicFavor">获取期刊点赞情况</l-button>
 <l-button type="warning" l-class="btn" size="long" bind:lintap="onGetMyFavorList">获取我喜欢的期刊</l-button>
+<l-button type="warning" l-class="btn" size="long" bind:lintap="onGetClassicDetail">获取期刊详情</l-button>

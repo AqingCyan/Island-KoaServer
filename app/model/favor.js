@@ -1,6 +1,6 @@
 const { Sequelize, Model, Op } = require('sequelize')
 const { db } = require('../../core/db')
-const { Art } = require('../model/art')
+const { Art } = require('./art')
 
 // 点赞业务表
 class Favor extends Model {
