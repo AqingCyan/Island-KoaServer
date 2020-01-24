@@ -23,5 +23,9 @@ module.exports = {
     'max-classes-per-file': 0,
     'object-curly-newline': 0,
     'class-methods-use-this': 0,
+    'no-continue': 0,
+    'no-await-in-loop': 0,
+    'guard-for-in': 0,
+    'no-restricted-syntax': 0,
   },
 };

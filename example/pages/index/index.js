@@ -129,6 +129,19 @@ Page({
     })
   },
 
+  onGetMyFavorList() {
+    wx.request({
+      url: 'http://localhost:10086/v1/classic/favor',
+      method: 'GET',
+      success: res => {
+        console.log(res.data)
+      },
+      header: {
+        Authorization: this._encode()
+      }
+    })
+  },
+
   // Base64加密
   _encode() {
     const token = wx.getStorageSync('token')

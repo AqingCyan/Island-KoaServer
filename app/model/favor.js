@@ -1,4 +1,4 @@
-const { Sequelize, Model } = require('sequelize')
+const { Sequelize, Model, Op } = require('sequelize')
 const { db } = require('../../core/db')
 const { Art } = require('../model/art')
 
@@ -51,7 +51,7 @@ class Favor extends Model {
     })
   }
 
-  // 用户是否点赞过该期刊
+  // 查询用户是否点赞过该期刊
   static async userLikeIt(artId, type, uid) {
     const favor = await Favor.findOne({
       where: {
@@ -61,6 +61,22 @@ class Favor extends Model {
       },
     })
     return !!favor
+  }
+
+  // 查询用户点赞过的期刊
+  static async getMyClassicFavors(uid) {
+    const arts = await Favor.findAll({
+      where: {
+        uid,
+        type: {
+          [Op.not]: 400,
+        },
+      },
+    })
+    if (!arts) {
+      throw new global.errs.NotFound()
+    }
+    return await Art.getList(arts)
   }
 }
 
