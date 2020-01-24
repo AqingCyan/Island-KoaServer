@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91e9cf7c-a93a-4178-bd14-b6ba35ed6f54" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/classic.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/classic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/art.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/art.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/favor.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/favor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/pages/index/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pages/index/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/book.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +69,7 @@
       <workItem from="1579757978464" duration="3380000" />
       <workItem from="1579761426470" duration="2022000" />
       <workItem from="1579765235741" duration="7926000" />
-      <workItem from="1579847303533" duration="4584000" />
+      <workItem from="1579847303533" duration="6639000" />
     </task>
     <servers />
   </component>
