@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="91e9cf7c-a93a-4178-bd14-b6ba35ed6f54" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/book-comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/book-comment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/classic.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/classic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/art.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/art.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/favor.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/favor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/hot-book.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/hot-book.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +74,7 @@
       <workItem from="1579847303533" duration="6644000" />
       <workItem from="1579932840638" duration="8310000" />
       <workItem from="1579955407170" duration="3057000" />
-      <workItem from="1579962837720" duration="2923000" />
+      <workItem from="1579962837720" duration="4422000" />
     </task>
     <servers />
   </component>
@@ -100,10 +98,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="502" y="380" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.877@0.23.1440.877" timestamp="1579707895252" />
-    <state x="291" y="25" width="858" height="873" key="find.popup" timestamp="1579790618707">
+    <state x="291" y="25" width="858" height="873" key="find.popup" timestamp="1579969552569">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="291" y="25" width="858" height="873" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1579790618707" />
+    <state x="291" y="25" width="858" height="873" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1579969552569" />
     <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1579941532489">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

@@ -96,7 +96,7 @@ class Favor extends Model {
     })
     return {
       favor_nums: favorNums,
-      list_status: !!myFavor,
+      like_status: myFavor ? 1 : 0,
     }
   }
 }

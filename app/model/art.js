@@ -23,6 +23,7 @@ class Art {
   }
 
   static async getData(artId, type, useScope = true) {
+    const { Book } = require('./book')
     let art = null
     const finder = {
       where: {
@@ -41,8 +42,15 @@ class Art {
         art = await Sentence.scope(scope).findOne(finder)
         break
       case 400:
+        art = await Book.scope(scope).findOne(finder)
+        if (!art) {
+          art = await Book.create({
+            id: artId,
+          })
+        }
         break
       default:
+        art = await Movie.scope(scope).findOne(finder)
         break
     }
     return art
@@ -90,9 +98,8 @@ class Art {
       case 300:
         arts = await Sentence.scope(scope).findAll(finder)
         break
-      case 400:
-        break
       default:
+        arts = await Movie.scope(scope).findAll(finder)
         break
     }
     return arts
