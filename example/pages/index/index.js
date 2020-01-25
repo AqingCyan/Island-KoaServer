@@ -142,9 +142,22 @@ Page({
     })
   },
 
-  onGetClassicDetail(){
+  onGetClassicDetail() {
     wx.request({
       url: 'http://localhost:10086/v1/classic/100/1',
+      method: 'GET',
+      success: res => {
+        console.log(res.data)
+      },
+      header: {
+        Authorization: this._encode()
+      }
+    })
+  },
+
+  onGetHotBookList() {
+    wx.request({
+      url: 'http://localhost:10086/v1/book/hot_list',
       method: 'GET',
       success: res => {
         console.log(res.data)

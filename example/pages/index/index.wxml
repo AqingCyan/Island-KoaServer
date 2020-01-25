@@ -8,3 +8,4 @@
 <l-button type="warning" l-class="btn" size="long" bind:lintap="onGetClassicFavor">获取期刊点赞情况</l-button>
 <l-button type="warning" l-class="btn" size="long" bind:lintap="onGetMyFavorList">获取我喜欢的期刊</l-button>
 <l-button type="warning" l-class="btn" size="long" bind:lintap="onGetClassicDetail">获取期刊详情</l-button>
+<l-button type="success" l-class="btn" size="long" bind:lintap="onGetHotBookList">获取热门书籍列表</l-button>
