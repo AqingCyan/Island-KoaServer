@@ -50,4 +50,24 @@ router.post('/add/short_comment', new Auth().m, async ctx => {
   success()
 })
 
+// 获取书籍短评
+router.get('/:book_id/short_comment', new Auth().m, async ctx => {
+  const v = await new PositiveIntegerValidator().validate(ctx, { id: 'book_id' })
+  ctx.body = await Comment.getComments(v.get('path.book_id'))
+})
+
+// 模拟一个热搜接口（web开发无法解决）
+router.get('/hot_keyword', async ctx => {
+  ctx.body = {
+    hot: [
+      'JavaScript',
+      'Golang',
+      '村上村树',
+      '东野圭吾',
+      'NodeJs',
+      '王小波',
+    ],
+  }
+})
+
 module.exports = router

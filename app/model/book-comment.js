@@ -22,6 +22,15 @@ class Comment extends Model {
       })
     }
   }
+
+  // 查询某一book短评详情
+  static async getComments(bookId) {
+    return Comment.findAll({
+      where: {
+        book_id: bookId,
+      },
+    })
+  }
 }
 
 Comment.init({

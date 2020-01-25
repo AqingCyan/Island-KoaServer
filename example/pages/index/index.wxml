@@ -14,3 +14,4 @@
 <l-button type="success" l-class="btn" size="long" bind:lintap="onGetMyFavorsBookCount">获取我喜欢书籍的数量</l-button>
 <l-button type="success" l-class="btn" size="long" bind:lintap="onGetBookFavor">获取书籍点赞情况</l-button>
 <l-button type="default" l-class="btn" size="long" bind:lintap="onAddShortComment">新增短评</l-button>
+<l-button type="default" l-class="btn" size="long" bind:lintap="onGetComments">获取书籍短评</l-button>

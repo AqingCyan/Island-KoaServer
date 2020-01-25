@@ -243,6 +243,19 @@ Page({
     })
   },
 
+  onGetComments() {
+    wx.request({
+      url: 'http://localhost:10086/v1/book/1120/short_comment',
+      method: 'GET',
+      success: res => {
+        console.log(res.data)
+      },
+      header: {
+        Authorization: this._encode()
+      }
+    })
+  },
+
 
   // Base64加密
   _encode() {
