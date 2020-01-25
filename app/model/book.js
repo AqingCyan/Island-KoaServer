@@ -14,6 +14,12 @@ class Book extends Model {
     const { data } = await Axios.get(url)
     return data
   }
+
+  static async searchFormYushu(q, start, count, summary = 1) {
+    const url = util.format(global.config.yushu.keywordUrl, encodeURI(q), count, start, summary)
+    const { data } = await Axios.get(url)
+    return data
+  }
 }
 
 Book.init({

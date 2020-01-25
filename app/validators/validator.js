@@ -40,7 +40,10 @@ class RegisterValidator extends LinValidator {
     super()
     this.email = [new Rule('isEmail', '不符合Email规范')]
     this.password1 = [
-      new Rule('isLength', '密码至少6个字符，最多32个字符', { min: 6, max: 32 }),
+      new Rule('isLength', '密码至少6个字符，最多32个字符', {
+        min: 6,
+        max: 32,
+      }),
       new Rule(
         'matches',
         '密码不符合规范，请包含特殊字符',
@@ -48,7 +51,10 @@ class RegisterValidator extends LinValidator {
       ),
     ]
     this.password2 = this.password1
-    this.nickname = [new Rule('isLength', '昵称长度不符合规范', { min: 4, max: 32 })]
+    this.nickname = [new Rule('isLength', '昵称长度不符合规范', {
+      min: 4,
+      max: 32,
+    })]
   }
 
   // 验证两个密码相同
@@ -74,10 +80,16 @@ class RegisterValidator extends LinValidator {
 class TokenValidator extends LinValidator {
   constructor() {
     super()
-    this.account = [new Rule('isLength', '不符合账号规则', { min: 4, max: 32 })]
+    this.account = [new Rule('isLength', '不符合账号规则', {
+      min: 4,
+      max: 32,
+    })]
     this.secret = [
       new Rule('isOptional'),
-      new Rule('isLength', '至少六个字符', { min: 6, max: 128 }),
+      new Rule('isLength', '至少六个字符', {
+        min: 6,
+        max: 128,
+      }),
     ]
   }
 
@@ -113,6 +125,33 @@ class LikeValidator extends PositiveIntegerValidator {
 // 校验获取用户对某一期刊是否点赞的参数
 class ClassicValidator extends LikeValidator {}
 
+// 校验搜索图书接口参数
+class SearchValidator extends LinValidator {
+  constructor() {
+    super()
+    this.q = [
+      new Rule('isLength', '搜索关键词不能为空', {
+        min: 1,
+        max: 16,
+      }),
+    ]
+    this.start = [
+      new Rule('isInt', 'start不符合规范', {
+        min: 0,
+        max: 60000,
+      }),
+      new Rule('isOptional', '', 0),
+    ]
+    this.count = [
+      new Rule('isInt', 'count不符合规范', {
+        min: 1,
+        max: 20,
+      }),
+      new Rule('isOptional', '', 20),
+    ]
+  }
+}
+
 module.exports = {
   PositiveIntegerValidator,
   RegisterValidator,
@@ -120,4 +159,5 @@ module.exports = {
   NotEmptyValidator,
   LikeValidator,
   ClassicValidator,
+  SearchValidator,
 }

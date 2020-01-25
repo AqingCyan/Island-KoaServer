@@ -1,6 +1,7 @@
 <component name="ProjectDictionaryState">
   <dictionary name="xuekaiqi">
     <words>
+      <w>axios</w>
       <w>bcrypt</w>
       <w>pubdate</w>
       <w>sequelize</w>
