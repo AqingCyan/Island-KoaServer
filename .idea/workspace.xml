@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91e9cf7c-a93a-4178-bd14-b6ba35ed6f54" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/xuekaiqi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/xuekaiqi.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/api/v1/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/art.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/art.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/validators/validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/validators/validator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/favor.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/favor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/pages/index/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pages/index/index.wxml" afterDir="false" />
     </list>
@@ -76,7 +74,7 @@
       <workItem from="1579761426470" duration="2022000" />
       <workItem from="1579765235741" duration="7926000" />
       <workItem from="1579847303533" duration="6644000" />
-      <workItem from="1579932840638" duration="6461000" />
+      <workItem from="1579932840638" duration="7665000" />
     </task>
     <servers />
   </component>

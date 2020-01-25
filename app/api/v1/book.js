@@ -1,6 +1,8 @@
 const Router = require('koa-router')
 const { HotBook } = require('../../model/hot-book')
 const { Book } = require('../../model/book')
+const { Favor } = require('../../model/favor')
+const { Auth } = require('../../../middlewares/auth')
 const { PositiveIntegerValidator, SearchValidator } = require('../../validators/validator')
 
 const router = new Router({
@@ -26,6 +28,17 @@ router.get('/search', async ctx => {
   const start = v.get('query.start')
   const count = v.get('query.count')
   ctx.body = await Book.searchFormYushu(q, start, count)
+})
+
+// 获取我喜欢的书籍的数量
+router.get('/favor/count', new Auth().m, async ctx => {
+  ctx.body = await Book.getMyFavorBookCount(ctx.auth.uid)
+})
+
+// 获取书籍点赞情况
+router.get('/:book_id/favor', new Auth().m, async ctx => {
+  const v = await new PositiveIntegerValidator().validate(ctx, { id: 'book_id' })
+  ctx.body = await Favor.getBookFavor(ctx.auth.uid, parseInt(v.get('path.book_id'), 10))
 })
 
 module.exports = router
