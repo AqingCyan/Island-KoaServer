@@ -39,7 +39,7 @@ Book.init({
   },
   fav_nums: {
     type: Sequelize.INTEGER,
-    default: 0,
+    defaultValue: 0,
   },
 }, {
   sequelize: db,

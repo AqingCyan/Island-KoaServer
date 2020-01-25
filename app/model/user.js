@@ -20,12 +20,11 @@ class User extends Model {
   }
 
   static async getUserByOpenid(openid) {
-    const user = await User.findOne({
+    return User.findOne({
       where: {
         openid,
       },
     })
-    return user
   }
 
   static async registerByOpenid(openid) {

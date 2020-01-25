@@ -1,0 +1,41 @@
+const { Sequelize, Model } = require('sequelize')
+const { db } = require('../../core/db')
+
+class Comment extends Model {
+  // 新增评论
+  static async addComment(bookId, content) {
+    const comment = await Comment.findOne({
+      where: {
+        book_id: bookId,
+        content,
+      },
+    })
+    if (!comment) {
+      await Comment.create({
+        book_id: bookId,
+        content,
+        nums: 1,
+      })
+    } else {
+      await comment.increment('nums', {
+        by: 1,
+      })
+    }
+  }
+}
+
+Comment.init({
+  content: Sequelize.STRING(24),
+  nums: {
+    type: Sequelize.INTEGER,
+    defaultValue: 0,
+  },
+  book_id: Sequelize.INTEGER,
+}, {
+  sequelize: db,
+  tableName: 'comment',
+})
+
+module.exports = {
+  Comment,
+}

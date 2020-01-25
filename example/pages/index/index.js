@@ -215,6 +215,7 @@ Page({
   onGetBookFavor() {
     wx.request({
       url: 'http://localhost:10086/v1/book/1120/favor',
+      // url: 'http://localhost:10086/v1/book/1000/favor',
       method: 'GET',
       success: res => {
         console.log(res.data)
@@ -224,6 +225,24 @@ Page({
       }
     })
   },
+
+  onAddShortComment() {
+    wx.request({
+      url: 'http://localhost:10086/v1/book/add/short_comment',
+      method: 'POST',
+      data: {
+        content: '春风十里不如有你春风十里不如有你',
+        book_id: 1120
+      },
+      success: res => {
+        console.log(res.data)
+      },
+      header: {
+        Authorization: this._encode()
+      }
+    })
+  },
+
 
   // Base64加密
   _encode() {

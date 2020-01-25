@@ -7,7 +7,7 @@ const classicFieleds = {
   pubdate: Sequelize.DATEONLY,
   fav_nums: {
     type: Sequelize.INTEGER,
-    default: 0,
+    defaultValue: 0,
   },
   title: Sequelize.STRING,
   type: Sequelize.TINYINT,

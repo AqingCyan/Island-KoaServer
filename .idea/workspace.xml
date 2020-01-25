@@ -5,7 +5,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/api/v1/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/book.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/classic.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/classic.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/favor.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/favor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/validators/validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/validators/validator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/pages/index/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pages/index/index.wxml" afterDir="false" />
     </list>
@@ -74,7 +77,8 @@
       <workItem from="1579761426470" duration="2022000" />
       <workItem from="1579765235741" duration="7926000" />
       <workItem from="1579847303533" duration="6644000" />
-      <workItem from="1579932840638" duration="7665000" />
+      <workItem from="1579932840638" duration="8310000" />
+      <workItem from="1579955407170" duration="2829000" />
     </task>
     <servers />
   </component>
