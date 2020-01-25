@@ -36,7 +36,7 @@ class Comment extends Model {
 Comment.prototype.exclude = ['book_id', 'id']
 
 Comment.init({
-  content: Sequelize.STRING(24),
+  content: Sequelize.STRING(12),
   nums: {
     type: Sequelize.INTEGER,
     defaultValue: 0,

@@ -231,7 +231,7 @@ Page({
       url: 'http://localhost:10086/v1/book/add/short_comment',
       method: 'POST',
       data: {
-        content: '春风十里不如有你春风十里不如有你',
+        content: '春风十里不如有你',
         book_id: 1120
       },
       success: res => {
