@@ -5,8 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/api/v1/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/book.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/book-comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/book-comment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/example/pages/index/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pages/index/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/classic.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/classic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/db.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +76,7 @@
       <workItem from="1579847303533" duration="6644000" />
       <workItem from="1579932840638" duration="8310000" />
       <workItem from="1579955407170" duration="3057000" />
-      <workItem from="1579962837720" duration="1269000" />
+      <workItem from="1579962837720" duration="2923000" />
     </task>
     <servers />
   </component>

@@ -19,8 +19,8 @@ router.get('/hot_list', async ctx => {
 // 获取书籍详情
 router.get('/:id/detail', async ctx => {
   const v = await new PositiveIntegerValidator().validate(ctx)
-  const book = new Book(v.get('path.id'))
-  ctx.body = await book.detail()
+  const book = new Book()
+  ctx.body = await book.detail(v.get('path.id'))
 })
 
 // 搜索图书

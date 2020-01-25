@@ -15,23 +15,23 @@ const classicFieleds = {
 
 class Movie extends Model {}
 
-Movie.init(classicFieleds, {
+Movie.init({ ...classicFieleds }, {
   sequelize: db,
   tableName: 'movie',
 })
 
 class Sentence extends Model {}
 
-Sentence.init(classicFieleds, {
+Sentence.init({ ...classicFieleds }, {
   sequelize: db,
   tableName: 'sentence',
 })
 
 class Music extends Model {}
 
-const MusicFieleds = Object.assign({ url: Sequelize.STRING }, classicFieleds)
+const MusicFieleds = { url: Sequelize.STRING, ...classicFieleds }
 
-Music.init(MusicFieleds, {
+Music.init({ ...MusicFieleds }, {
   sequelize: db,
   tableName: 'music',
 })
