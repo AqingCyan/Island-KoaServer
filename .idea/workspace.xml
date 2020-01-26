@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="91e9cf7c-a93a-4178-bd14-b6ba35ed6f54" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/book-comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/book-comment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/validators/validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/validators/validator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/init.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/init.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +49,9 @@
     <property name="settings.editor.selected.configurable" value="com.eslint.settings.ESLintSettingsPage" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/api" />
     </key>
@@ -74,7 +78,8 @@
       <workItem from="1579847303533" duration="6644000" />
       <workItem from="1579932840638" duration="8310000" />
       <workItem from="1579955407170" duration="3057000" />
-      <workItem from="1579962837720" duration="4868000" />
+      <workItem from="1579962837720" duration="4978000" />
+      <workItem from="1580021441275" duration="2069000" />
     </task>
     <servers />
   </component>

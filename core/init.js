@@ -12,7 +12,9 @@ class InitManager {
 
   // 装载项目环境配置
   static loadConfig(path = '') {
+    /* eslint prefer-template: 0 */
     const configPath = path || process.cwd() + '/config/config.js'
+    /* eslint import/no-dynamic-require:0 */
     const config = require(configPath)
     global.config = config
   }
