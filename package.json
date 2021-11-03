@@ -27,7 +27,7 @@
     "npm-check": "^5.9.0",
     "require-directory": "^2.1.1",
     "sequelize": "^5.21.3",
-    "validator": "^10.11.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
